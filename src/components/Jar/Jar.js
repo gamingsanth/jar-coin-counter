@@ -1,6 +1,6 @@
 import "./styles/jar.css";
 
-export default ({ counter }) => {
+export default function Jar({ counter }) {
     return (
         <div>
             <div className="animation-container">
