@@ -4,7 +4,7 @@ import Button from "./IconButton";
 import AddIcon from '@mui/icons-material/Add';
 import axios from "axios";
 
-const SERVER_URL = "http://localhost:3001";
+const SERVER_URL = "https://jar-coin-counter-backend.onrender.com";
 
 
 function JarCoinCounter() {
