@@ -11,8 +11,12 @@ const SERVER_URL = "https://jar-coin-counter-backend.onrender.com";
 function JarCoinCounter() {
     const [count, setCount] = useState(0);
     const handleIncrement = () => {
-        axios.put(SERVER_URL + "/count");
-        setCount(prev => prev + 1);
+        axios.put(SERVER_URL + "/count").then((response) => {
+            setCount(prev => prev + 1);
+        }).catch((err) => {
+            //
+        });
+       
     }
 
     const handleReset = () => {
@@ -31,7 +35,7 @@ function JarCoinCounter() {
                 <Jar counter={count} />
             </div>
             <div style={{ display: "flex", justifyContent: "center", alignContent: "center", gap: "20px" }}>
-                <div><Button color={"red"} name={"Reset"} icon={<LockResetIcon />} onCall={handleReset} /></div>
+                {/* <div><Button color={"red"} name={"Reset"} icon={<LockResetIcon />} onCall={handleReset} /></div> */}
                 <div><Button color={"purple"} name={"Increment"} icon={<AddIcon />} onCall={handleIncrement} /></div>
             </div>
         </div>
