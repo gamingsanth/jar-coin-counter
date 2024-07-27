@@ -12,7 +12,7 @@ function JarCoinCounter() {
     const [count, setCount] = useState(0);
     const handleIncrement = () => {
         axios.put(SERVER_URL + "/count").then((response) => {
-            setCount(prev => prev + 1);
+            setCount(prev => Number(prev) + 1);
         }).catch((err) => {
             //
         });
