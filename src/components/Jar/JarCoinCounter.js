@@ -4,12 +4,14 @@ import Button from "./IconButton";
 import AddIcon from '@mui/icons-material/Add';
 import axios from "axios";
 import LockResetIcon from '@mui/icons-material/LockReset';
+import { CircularProgress } from "@mui/material";
 
 const SERVER_URL = "https://jar-coin-counter-backend.onrender.com";
 
 
 function JarCoinCounter() {
     const [count, setCount] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
     const handleIncrement = () => {
         axios.put(SERVER_URL + "/count").then((response) => {
             setCount(prev => Number(prev) + 1);
@@ -26,13 +28,15 @@ function JarCoinCounter() {
 
     useEffect(() => {
         axios.get(SERVER_URL + "/count").then(res => {
+            setIsLoading(() => false);
             setCount(res.data.count);
         })
     });
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
             <div>
-                <Jar counter={count} />
+            {isLoading && <CircularProgress style={{ marginBottom: "50px" }} color="secondary" />}
+            {(!isLoading) && <Jar counter={count} />}
             </div>
             <div style={{ display: "flex", justifyContent: "center", alignContent: "center", gap: "20px" }}>
                 <div hidden><Button color={"red"} name={"Reset"} icon={<LockResetIcon />} onCall={handleReset} /></div>
