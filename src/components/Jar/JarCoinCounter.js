@@ -21,6 +21,13 @@ function JarCoinCounter() {
        
     }
 
+    const handleDecrement = () => {
+        if(count > 0) {
+            axios.put(SERVER_URL + "/decrease");
+            setCount(prev => prev - 1);
+        }
+    }
+
     const handleReset = () => {
         axios.put(SERVER_URL + "/reset");
         setCount(0);
@@ -41,6 +48,7 @@ function JarCoinCounter() {
             <div style={{ display: "flex", justifyContent: "center", alignContent: "center", gap: "20px" }}>
                 <div hidden><Button color={"red"} name={"Reset"} icon={<LockResetIcon />} onCall={handleReset} /></div>
                 <div><Button color={"purple"} name={"Increment"} icon={<AddIcon />} onCall={handleIncrement} /></div>
+                <div><Button color={"blue"} name={"Decrement"} icon={<AddIcon />} onCall={handleDecrement} /></div>
             </div>
         </div>
     );
