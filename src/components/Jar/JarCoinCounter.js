@@ -6,7 +6,7 @@ import axios from "axios";
 import LockResetIcon from '@mui/icons-material/LockReset';
 import { CircularProgress } from "@mui/material";
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_URL = "http://ec2-13-201-25-64.ap-south-1.compute.amazonaws.com";
 
 
 function JarCoinCounter() {
