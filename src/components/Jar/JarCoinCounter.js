@@ -23,8 +23,11 @@ function JarCoinCounter() {
 
     const handleDecrement = () => {
         if(count > 0) {
-            axios.put(SERVER_URL + "/decrease");
-            setCount(prev => prev - 1);
+            axios.put(SERVER_URL + "/decrease").then((response) => {
+                setCount(prev => prev - 1);
+            }).catch((err) => {
+                //
+            });
         }
     }
 
