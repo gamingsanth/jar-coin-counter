@@ -6,7 +6,7 @@ import axios from "axios";
 import LockResetIcon from '@mui/icons-material/LockReset';
 import { CircularProgress } from "@mui/material";
 
-const SERVER_URL = "https://jar-coin-counter-backend.onrender.com";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 function JarCoinCounter() {
