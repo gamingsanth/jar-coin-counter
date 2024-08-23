@@ -2,11 +2,11 @@
   "name": "jar-coin-counter",
   "version": "0.1.0",
   "private": true,
-  "description": "",                // Optional: Add a brief description of the project
-  "author": "",                     // Optional: Add author details if relevant
-  "license": "MIT",                 // Optional: Specify the license if applicable
-  "keywords": [],                  // Optional: Add relevant keywords for your project
-  "repository": {                  // Optional: Add repository information if applicable
+  "description": "",                
+  "author": "",                     
+  "license": "MIT",                 
+  "keywords": [],                  
+  "repository": {                  
     "type": "git",
     "url": "https://github.com/your-username/jar-coin-counter.git"
   },
