@@ -49,7 +49,7 @@ function JarCoinCounter() {
             {(!isLoading) && <Jar counter={count} />}
             </div>
             <div style={{ display: "flex", justifyContent: "center", alignContent: "center", gap: "20px" }}>
-                <div hidden><Button color={"red"} name={"Reset"} icon={<LockResetIcon />} onCall={handleReset} /></div>
+                <div><Button color={"red"} name={"Reset"} icon={<LockResetIcon />} onCall={handleReset} /></div>
                 <div><Button color={"purple"} name={"Increment"} icon={<AddIcon />} onCall={handleIncrement} /></div>
                 <div><Button color={"blue"} name={"Decrement"} icon={<AddIcon />} onCall={handleDecrement} /></div>
             </div>
